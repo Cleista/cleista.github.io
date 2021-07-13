@@ -1,7 +1,57 @@
 @import "../../neato/bower_components/normalize.css/normalize.css";
+@font-face {
+  font-family: "Borda";
+  src: url(./BordaMedium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "JDJSTE Heavy";
+  src: url(./JDJSTE.ttf) format("truetype");
+}
 html {
   box-sizing: border-box;
 }
+.attribute-table {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.attribute-table th:nth-of-type(1), .attribute-table th:nth-of-type(3) {
+    text-align: center;
+}
+.attribute-table th:nth-of-type(2), .attribute-table th:nth-of-type(4),
+.attribute-table td {
+    text-align: left;
+}
+.attribute-icon {
+    height: 18px;
+    filter: brightness(10%);
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+.stat-box-pnc {
+    font-family: "Borda", sans-serif;
+}
+.skill-description-debuff-bleed {
+    color: red;
+}
+.skill-description-unlock {
+    color: gray;
+}
+@media (max-width: 1600px) {
+  .attribute-table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 800px) {
+  .attribute-table {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -158,11 +208,11 @@ div#mc_embed_signup h2 {
 .menu-c .menu-title {
   background-image: linear-gradient(
     to right,
-    #142744,
-    #172d4c,
-    #1a3354,
-    #1c3a5c,
-    #1f4064
+    #184414,
+    #1b4c17,
+    #1a541d,
+    #1c5c21,
+    #1f6422
   ) !important;
 }
 .menu-title i {
@@ -171,21 +221,21 @@ div#mc_embed_signup h2 {
 .top-content-brand {
   background-image: linear-gradient(
     to right,
-    #142744,
-    #172d4c,
-    #1a3354,
-    #1c3a5c,
-    #1f4064
+    #184414,
+    #1b4c17,
+    #1a541d,
+    #1c5c21,
+    #1f6422
   ) !important;
 }
 div#mc_embed_signup h2 {
   background-image: linear-gradient(
     to right,
-    #142744,
-    #172d4c,
-    #1a3354,
-    #1c3a5c,
-    #1f4064
+    #184414,
+    #1b4c17,
+    #1a541d,
+    #1c5c21,
+    #1f6422
   ) !important;
 }
 #block-latestposts h2,
@@ -195,11 +245,11 @@ div#mc_embed_signup h2 {
 #block-popularitemsblock h2 {
   background-image: linear-gradient(
     to right,
-    #142744,
-    #172d4c,
-    #1a3354,
-    #1c3a5c,
-    #1f4064
+    #184414,
+    #1b4c17,
+    #1a541d,
+    #1c5c21,
+    #1f6422
   ) !important;
 }
 .view-id-taxonomy_list .views-row .view-field-list-cell {
@@ -241,21 +291,22 @@ div#mc_embed_signup h2 {
   border-bottom: 1px solid #1e3f62;
 }
 h3::before {
-  background-image: url(https://gamepress.gg/arknights/sites/arknights/files/2019-11/workshop_0.png);
-  background-size: 18px;
+  background: #184414 url(./section-image.png);
+  background-size: 24px;
+  background-position: center;
   display: inline-block;
-  width: 20px;
-  height: 17px;
+  width: 30px;
+  height: 24px;
   content: "";
   margin-right: 5px;
   background-repeat: no-repeat;
-  vertical-align: -3px;
+  vertical-align: -6px;
 }
 .sub-title-type-1 {
   border-left: none;
   border-radius: 0;
   padding: 5px;
-  background: #0f2b3c;
+  background: #184414;
   color: #fff;
   box-shadow: 2px 2px 3px #565656;
 }
@@ -264,11 +315,11 @@ h3::before {
 .topic-text h2 {
   background-image: linear-gradient(
     to right,
-    #142744,
-    #172d4c,
-    #1a3354,
-    #1c3a5c,
-    #1f4064
+    #184414,
+    #1b4c17,
+    #1a541d,
+    #1c5c21,
+    #1f6422
   ) !important;
   border-radius: 0 !important;
   box-shadow: -5px -4px 0 #49608a;
@@ -338,11 +389,12 @@ h3::before {
   }
 }
 .description-box {
-  background: #1d1d1d;
+  background: url(./UI_ShopMainBg.png);
+  background-position: center;
   padding: 5px 7px;
   margin-bottom: 10px;
   box-shadow: 2px 2px 3px #565656;
-  color: #fff;
+  color: #494949;
 }
 .building-buff-cell {
   margin-bottom: 10px;
@@ -536,8 +588,9 @@ h3::before {
 }
 .approach-cell {
   margin-bottom: 10px;
-  background: #1d1d1d;
-  color: #fff;
+  background: url(./UI_ShopMainBg.png);
+  background-position: center;
+  color: #494949;
   border: 1px solid #787878 !important;
   padding: 7px 15px;
 }
@@ -546,17 +599,17 @@ h3::before {
 }
 .obtain-approach-table table th,
 .blackboard-talent-cell table th {
-  background: #171717;
+  /* background: #171717;
   color: #fff;
-  border: 1px solid #787878 !important;
+  border: 1px solid #787878 !important; */
   width: 50%;
   text-align: center;
 }
 .obtain-approach-table table td,
 .blackboard-talent-cell table td {
-  background: #262626;
+  /* background: #262626;
   color: #fff;
-  border: 1px solid #787878 !important;
+  border: 1px solid #787878 !important; */
   text-align: center;
   width: 50%;
 }
@@ -565,10 +618,12 @@ h3::before {
 .blackboard-talent-cell .obtain-no,
 .blackboard-talent-cell .obtain-limited {
   color: red;
+  font-weight: bold;
 }
 .obtain-approach-table .obtain-yes,
 .blackboard-talent-cell .obtain-yes {
-  color: #00f100;
+  color: green;
+  font-weight: bold;
 }
 .group-icon {
   display: inline-block;
@@ -1403,7 +1458,7 @@ h3::before {
   background-color: #1e4258;
 }
 .operator-page-cell .operator-top-cell {
-  background: url(/sites/arknights/files/2019-10/bg.png);
+  background: url(./UI_HerolistBg.png);
   background-size: cover;
   background-position: center;
   padding: 5px;
@@ -1415,11 +1470,12 @@ h3::before {
 .operator-page-cell .operator-top-cell .left-cell .faction-cell {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 3;
 }
 .operator-page-cell .operator-top-cell .left-cell .faction-cell img {
-  width: 150px;
+  width: 512px;
+  filter: brightness(50%);
 }
 @media screen and (max-width: 1075px) {
   .operator-page-cell .operator-top-cell .left-cell .faction-cell img {
@@ -1427,16 +1483,17 @@ h3::before {
   }
 }
 .operator-page-cell .operator-top-cell .left-cell .profession-cell {
-  z-index: 3;
+  z-index: 6;
   margin-top: 5px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 25%;
+  right: 70%;
 }
 .operator-page-cell .operator-top-cell .left-cell .profession-cell img {
   background: rgba(0, 0, 0, 0.741176);
   border: 1px solid #fff;
-  width: 90px;
+  padding: 5px;
+  width: 30px;
   box-shadow: 2px 2px 3px #2d2d2d;
 }
 @media screen and (max-width: 1075px) {
@@ -1448,20 +1505,50 @@ h3::before {
   .operator-top-cell
   .left-cell
   .profession-cell
-  .profession-title {
-  text-align: center;
+  .character-name-cn {
+  font-family: "JDJSTE Heavy";
+  text-align: right;
+  color: #fff;
+  padding: 2px;
+  -webkit-text-stroke: 1px #aaa;
+  position: absolute;
+  width: 200px;
+  right: 0;
+  top: 30px;
+  font-size: 400%;
+  font-weight: 900;
+}
+.operator-page-cell
+  .operator-top-cell
+  .left-cell
+  .profession-cell
+  .character-name {
+  font-family: "Borda";
+  text-transform: uppercase;
+  font-stretch: ultra-condensed; 
+  text-align: right;
   background: #1d1d1d;
   color: #fff;
   padding: 2px;
   box-shadow: 2px 2px 3px #2d2d2d;
+  position: absolute;
+  right: 0;
+  top: 120px;
+  width: 200px;
+  font-size: 120%;
+  padding-right: 10px;
 }
 .operator-page-cell .operator-top-cell .left-cell .rarity-cell {
-  text-align: center;
+  z-index: 10;
+  position: absolute;
+  top: 30%;
+  left: 70%;
+  text-align: left;
 }
 .operator-page-cell .operator-top-cell .left-cell .rarity-cell img {
   vertical-align: middle;
   margin-right: -10px;
-  width: 30px;
+  width: 60px;
 }
 @media screen and (max-width: 1075px) {
   .operator-page-cell .operator-top-cell .left-cell .rarity-cell img {
@@ -1470,7 +1557,7 @@ h3::before {
 }
 .operator-page-cell .operator-top-cell .left-cell .rarity-cell img:last-child {
   margin-right: 0;
-  width: 30px;
+  width: 60px;
 }
 @media screen and (max-width: 1075px) {
   .operator-page-cell
@@ -1487,7 +1574,7 @@ h3::before {
   position: relative;
 }
 .operator-page-cell .operator-top-cell .left-cell .operator-image.current-tab {
-  z-index: 1;
+  z-index: 4;
   display: inherit;
   position: relative;
 }
@@ -1506,6 +1593,14 @@ h3::before {
   display: block;
   margin-right: 2.35765%;
   width: 48.82117%;
+  font-family: "Borda";
+}
+.operator-page-cell
+  .operator-top-cell
+  .right-cell
+  .position-cell
+  .title-text-cell {
+  margin-bottom: -15px;
 }
 .operator-page-cell .operator-top-cell .right-cell .position-cell:last-child {
   margin-right: 0;
@@ -1515,6 +1610,14 @@ h3::before {
   display: block;
   margin-right: 2.35765%;
   width: 48.82117%;
+  font-family: "Borda";
+}
+.operator-page-cell
+  .operator-top-cell
+  .right-cell
+  .traits-cell
+  .title-text-cell {
+  margin-bottom: -15px;
 }
 .operator-page-cell .operator-top-cell .right-cell .traits-cell:last-child {
   margin-right: 0;
@@ -1568,7 +1671,7 @@ h3::before {
 .operator-page-cell .skin-tab {
   position: absolute;
   bottom: 60px;
-  z-index: 2;
+  z-index: 5;
 }
 .operator-page-cell .skin-tab .operator-skin img {
   height: 35px !important;
@@ -1577,9 +1680,10 @@ h3::before {
   display: flex;
   position: absolute;
   bottom: 0;
-  z-index: 2;
+  z-index: 5;
   display: block;
   margin: 0 0 10px;
+  right: 0;
 }
 .operator-page-cell .elite-image-cell-tab::after {
   clear: both;
@@ -1587,7 +1691,7 @@ h3::before {
   display: table;
 }
 .operator-page-cell .elite-image-cell-tab .operator-image-tabs img {
-  width: 40px;
+  width: 80px;
 }
 @media screen and (max-width: 1075px) {
   .operator-page-cell .elite-image-cell-tab .operator-image-tabs img {
@@ -1607,14 +1711,9 @@ h3::before {
   margin-bottom: 8px;
 }
 .operator-page-cell .skill-upgrade-tab .skill-upgrade-link {
-  display: flex !important;
-  display: -webkit-flex;
-  justify-content: center;
-  -webkit-justify-content: space-between;
   padding: 0 !important;
 }
 .operator-page-cell .skill-upgrade-tab .skill-upgrade-link img {
-  width: 35px;
   height: 35px !important;
 }
 .operator-page-cell ul.operator-image-tabs {
@@ -1698,7 +1797,7 @@ h3::before {
   border: 1px solid #1e4258;
 }
 .operator-page-cell ul#upgrade-tabs li {
-  background: url(/sites/arknights/files/2019-10/bg_0.png);
+  background: url(./skill-background.png);
   background-position: center;
   display: inline-block;
   padding: 5px;
@@ -4252,7 +4351,7 @@ span.parts-cost {
   margin-bottom: 10px;
 }
 .trap-page-cell .trap-image-cell {
-  background: url(/sites/arknights/files/2019-10/bg.png);
+  background: url(./UI_HerolistBg.png);
   background-size: cover;
   background-position: center;
   padding: 7px;
@@ -4301,7 +4400,9 @@ span.parts-cost {
   vertical-align: middle;
   width: 90px;
 }
-.trap-page-cell .trap-image-cell .trap-profession .profession-title {
+.trap-page-cell .trap-image-cell .trap-profession .character-name {
+  font-family: "Borda";
+  text-transform: uppercase;
   background: #1d1d1d;
   color: #fff;
   margin-top: 5px;
@@ -4952,7 +5053,7 @@ span.parts-cost {
 .tier-container .tier-list-cell-row .tier-list-cell {
   border: 1px solid #000;
   color: #fff;
-  background-image: url(https://gamepress.gg/sites/arknights/files/2019-10/bg.png);
+  background-image: url(./UI_HerolistBg.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -6141,11 +6242,12 @@ span.parts-cost {
   content: "";
 }
 .potential-item-cell {
-  background: #1d1d1d;
+  background: url(./UI_ShopMainBg.png);
+  background-position: center;
   padding: 10px 7px;
   margin-bottom: 10px;
   box-shadow: 2px 2px 3px #565656;
-  color: #fff;
+  color: #494949;
   display: flex;
   align-items: center;
 }
@@ -6780,15 +6882,16 @@ span.parts-cost {
   background: #081831;
 }
 .darkmode .page h3::before {
-  background-image: url(https://gamepress.gg/arknights/sites/arknights/files/2020-02/workshop_1.png);
-  background-size: 18px;
+  background: #184414 url(./section-image.png);
+  background-size: 24px;
+  background-position: center;
   display: inline-block;
   width: 20px;
   height: 17px;
   content: "";
   margin-right: 5px;
   background-repeat: no-repeat;
-  vertical-align: -3px;
+  vertical-align: -6px;
 }
 .darkmode .page #stats-container {
   box-shadow: none;
