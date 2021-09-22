@@ -2493,11 +2493,11 @@
                       <div class="description-box">
                         Considered a ranged unit. Has an attack range of 2 tiles.
                       </div>
-                      <h3 class="sub-title">Operator Description</h3>
+                      <h3 class="sub-title">Character Description</h3>
                       <div class="description-box">
                         As one of the best Doll products of 2055, the LG-II was introduced to coincide perfectly with the "Neo-Urbanist" movement that was trending at the time. In order to ensure superior proficiency at landscaping tasks such as branch trimming, pest control and the like, Universal Anything's engineers optimized the LG-II's software until they reached a task refinement level of 99.96%. In order to aid in this, the LG-IIs were also furnished with high-level aesthetic recognition ability, allowing them to independently craft gardenscapes, coordinate vegetation deployments and other such design tasks.
                       </div>
-                      <h3 class="sub-title">Operator Quote</h3>
+                      <h3 class="sub-title">Character Quote</h3>
                       <div class="description-box">
                         <i>Good morning! Do you smell the sweet scent of anemones, Professor?</i>
                       </div>
@@ -2806,11 +2806,266 @@
                           <td data-name-cn="战后生命恢复">16</td>
                           </tr></tbody></table>
                       </div>
+                      <!-- Skill layout CSS -->
+                      <style>
+                        .skill-container {
+                          display: flex;
+                          background-color: white;
+                          margin: 10px 0px 10px 0px;
+                          padding: 5px;
+                        }
+
+                        .skill-left .skill-right {
+                          display: block;
+                        }
+
+                        .skill-icon-container {
+                          position: relative;
+                          width: 80px;
+                          height: 80px;
+                          margin: 10px;
+
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                        }
+
+                        .skill-icon-container .pnc-skill-icon-frame {
+                          position: absolute;
+                          width: 100%;
+                        }
+
+                        .skill-icon-container .pnc-skill-icon-image {
+                          width: 80%;
+                          z-index: 9999
+                        }
+
+                        .skill-text {
+                          display: inline-block;
+                          margin-left: 10px;
+                        }
+
+                        .skill-text-title {
+                          font-size: larger;
+                          font-weight: 700;
+                          border-bottom: 1px solid #aaa;
+                          padding-bottom: 3px;
+                          margin-bottom: 3px;
+                        }
+
+                        .skill-text-description {
+
+                        }
+
+                        .pnc-keyword {
+                          color: red;
+                          font-weight: 700;
+                        }
+
+                        .pnc-multiplier {
+                          color: orange;
+                          font-weight: 700;
+                        }
+
+                        .skill-tab-selector-container {
+                          display: flex;
+                          justify-content: space-between;
+                        }
+                        
+                        .skill-tab-selector-button {
+                          box-shadow: 2px 2px 3px #565656;
+                          width: 48%;
+                          padding: 8px;
+                          margin-bottom: 5px;
+                          text-align: center;
+                          cursor: pointer;
+                          background-color: rgb(86, 86, 86);
+                          color: white;
+                        }
+
+                        .skill-tab-selector-button.selected, .skill-tab-selector-button:hover {
+                          background-color: rgb(53, 53, 53);
+                        }
+                      </style>
+                      <h2 class="main-title">Skills</h2>
+                      <div class="skill-tab-selector-container">
+                        <div class="skill-tab-selector-button pnc-tab-button selected" data-tabid="skills-simple" data-tabgroup="selector-pnc-skill">
+                          Simple
+                        </div>
+                        <div class="skill-tab-selector-button pnc-tab-button" data-tabid="skills-detailed" data-tabgroup="selector-pnc-skill">
+                          Detailed
+                        </div>
+                      </div>
+                      <div class="skill-section" style="padding: 0px 7px 0px 7px; margin: 10px 0px 10px 0px;">
+                        <div class="skill-tab-container" data-tabid="skills-simple" data-tabgroup="selector-pnc-skill">
+                          <!-- Passive -->
+                          <div class="skill-container">
+                            <div class="skill-left">
+                              <div class="skill-icon-container">
+                                <!-- The first image changes per character, the 2nd/3rd images stay consistent between characters -->
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/skill-background-1.png">
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/border-skill-passive.png">
+                                <img class="pnc-skill-icon-image" src="./doll-template-ak-base_files/sakuya_passive.png">
+                              </div>
+                            </div>
+                            <div class="skill-right">
+                              <div class="skill-text">
+                                <div class="skill-text-title">
+                                  Falling Flowers
+                                </div>
+                                <div class="skill-text-description">
+                                  Attacks mark a target. Marked units have a chance to <span class="pnc-keyword">bleed</span> when taking damage from any source. This chance is doubled if Sakuya causes the damage. 
+                                </div>
+                              </div>    
+                            </div>
+                          </div>
+
+                          <!-- Active -->
+                          <div class="skill-container">
+                            <div class="skill-left">
+                              <div class="skill-icon-container">
+                                <!-- The first image changes per character, the 2nd/3rd images stay consistent between characters -->
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/skill-background-1.png">
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/border-skill-active.png">
+                                <img class="pnc-skill-icon-image" src="./doll-template-ak-base_files/sakuya_skill.png">
+                              </div>
+                            </div>
+                            <div class="skill-right">
+                              <div class="skill-text">
+                                <div class="skill-text-title">
+                                  Leaf Cutting Blade
+                                </div>
+                                <div class="skill-text-description">
+                                  Deals <span class="pnc-keyword">physical damage</span> to units within range and applies <span class="pnc-keyword">bleed</span>. If enemies reach full <span class="pnc-keyword">bleed</span> stacks from this effect, Sakuya recasts this skill.
+                                </div>
+                              </div>    
+                            </div>
+                          </div>
+                          <!-- Ultimate -->
+                          <div class="skill-container">
+                            <div class="skill-left">
+                              <div class="skill-icon-container">
+                                <!-- The first image changes per character, the 2nd/3rd images stay consistent between characters -->
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/skill-background-1.png">
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/border-skill-ultimate.png">
+                                <img class="pnc-skill-icon-image" src="./doll-template-ak-base_files/sakuya_ultimate.png">
+                              </div>
+                            </div>
+                            <div class="skill-right">
+                              <div class="skill-text">
+                                <div class="skill-text-title">
+                                  Thousand Leaf Storm
+                                </div>
+                                <div class="skill-text-description">
+                                  Deals <span class="pnc-keyword">physical damage</span> to all enemies in the targeted direction, and applies a random number of <span class="pnc-keyword">bleed</span> stacks.
+                                </div>
+                              </div>    
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="skill-tab-container" style="display: none;" data-tabid="skills-detailed" data-tabgroup="selector-pnc-skill">
+                          <!-- Passive -->
+                          <div class="skill-container">
+                            <div class="skill-left">
+                              <div class="skill-icon-container">
+                                <!-- The first image changes per character, the 2nd/3rd images stay consistent between characters -->
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/skill-background-1.png">
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/border-skill-passive.png">
+                                <img class="pnc-skill-icon-image" src="./doll-template-ak-base_files/sakuya_passive.png">
+                              </div>
+                            </div>
+                            <div class="skill-right">
+                              <div class="skill-text">
+                                <div class="skill-text-title">
+                                  Falling Flowers
+                                </div>
+                                <div class="skill-text-description">
+                                  <p>Attacks mark a target for 5 seconds. Marked units have a <span class="pnc-multiplier">20%</span> chance to gain 1 stack of <span class="pnc-keyword">bleed</span> when taking damage from any source. This chance is doubled if Sakuya causes the damage. </p>
+                                  <p><span class="pnc-keyword">Bleed</span>: Receive 0.2% maximum HP damage every second, lasts 5 seconds. Max 10 stacks. Debuff. </p>
+                                </div>
+                              </div>    
+                            </div>
+                          </div>
+
+                          <!-- Active -->
+                          <div class="skill-container">
+                            <div class="skill-left">
+                              <div class="skill-icon-container">
+                                <!-- The first image changes per character, the 2nd/3rd images stay consistent between characters -->
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/skill-background-1.png">
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/border-skill-active.png">
+                                <img class="pnc-skill-icon-image" src="./doll-template-ak-base_files/sakuya_skill.png">
+                              </div>
+                            </div>
+                            <div class="skill-right">
+                              <div class="skill-text">
+                                <div class="skill-text-title">
+                                  Leaf Cutting Blade
+                                </div>
+                                <div class="skill-text-description">
+                                  <p>Deals <span class="pnc-multiplier">180%</span> <span class="pnc-keyword">physical damage</span> to units within 2 tiles and applies 1 stack of <span class="pnc-keyword">bleed</span>. If enemies reach full <span class="pnc-keyword">bleed</span> stacks from this effect, Sakuya recasts this skill.</p>
+                                  <p>If multiple enemies reach full stacks of <span class="pnc-keyword">bleed</span> from the same skill cast, it will only be recast once.</p>
+                                </div>
+                              </div>    
+                            </div>
+                          </div>
+                          <!-- Ultimate -->
+                          <div class="skill-container">
+                            <div class="skill-left">
+                              <div class="skill-icon-container">
+                                <!-- The first image changes per character, the 2nd/3rd images stay consistent between characters -->
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/skill-background-1.png">
+                                <img class="pnc-skill-icon-frame" src="./doll-template-ak-base_files/border-skill-ultimate.png">
+                                <img class="pnc-skill-icon-image" src="./doll-template-ak-base_files/sakuya_ultimate.png">
+                              </div>
+                            </div>
+                            <div class="skill-right">
+                              <div class="skill-text">
+                                <div class="skill-text-title">
+                                  Thousand Leaf Storm
+                                </div>
+                                <div class="skill-text-description">
+                                  <p>Deals <span class="pnc-multiplier">600%</span> <span class="pnc-keyword">physical damage</span> to all enemies in the targeted direction, and applies anywhere between 1-9 <span class="pnc-keyword">bleed</span> stacks.</p>
+                                </div>
+                              </div>    
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                       <h2 class="main-title">Ultimate Skill Video</h2>
-                      <p><i>Maybe 2 tabs, 1 for an in-game gif, 1 for the 2D animation clip?</i></p>
-                      <div class="quick-evaluation">
+
+                      <div class="skill-tab-selector-container">
+                        <div class="skill-tab-selector-button pnc-tab-button selected" data-tabid="ulti-ingame" data-tabgroup="selector-pnc-ulti">
+                          In-Game
+                        </div>
+                        <div class="skill-tab-selector-button pnc-tab-button" data-tabid="ulti-movie" data-tabgroup="selector-pnc-ulti">
+                          Movie
+                        </div>
+                      </div>
+
+                      <div class="skill-tab-container" data-tabid="ulti-ingame" data-tabgroup="selector-pnc-ulti">
+                        <video style="width: 100%" src="./doll-template-ak-base_files/vee-ulti-ingame.mp4" muted autoplay loop></video>
+                      </div>
+
+                      <div class="skill-tab-container" style="display: none" data-tabid="ulti-movie" data-tabgroup="selector-pnc-ulti">
                         <video style="width: 100%" src="./doll-template-ak-base_files/vee.mp4" muted autoplay loop></video>
                       </div>
+
+                      <!-- Tab switcher script -->
+                      <script>
+                        $(".pnc-tab-button").click(function() {
+                          let tabgroup = $(this).data("tabgroup");
+                          let tabid = $(this).data("tabid");
+
+                          $(`[data-tabgroup=${tabgroup}]`).css("display", "none");
+                          $(`.pnc-tab-button[data-tabgroup=${tabgroup}]`).css("display", "block").removeClass("selected");
+                          $(`[data-tabid=${tabid}]`).css("display", "block");
+                          $(this).addClass("selected");
+                        })
+                      </script>
+
                       <ul class="operator-tabs-page" id="analysis">
                         <li>
                           <a
@@ -2837,14 +3092,14 @@
                           >Etiam sit amet lorem diam. Praesent at quam dolor. Pellentesque dictum erat a urna convallis iaculis. Ut tincidunt iaculis nibh, eu vestibulum magna accumsan in. Cras at tellus eget libero posuere blandit. Pellentesque ac justo tincidunt, imperdiet nisi vitae, cursus dolor. Nam elit nulla, aliquet non rhoncus sed, fermentum ut ipsum. Ut imperdiet felis sed nisl mollis, vitae condimentum leo hendrerit. Aliquam sit amet lacus et felis ultrices porttitor ac ut quam. Nunc odio dolor, cursus et ipsum non, pretium tempus ex. Aenean dui nibh, dapibus at enim quis, ullamcorper efficitur tortor. Curabitur pharetra leo tortor, eget feugiat metus dignissim eu.<br
                         /></span>
                       </div>
-                      <h2 class="main-title">Operator Overview</h2>
+                      <h2 class="main-title">Character Overview</h2>
                       <div id="operator-overview">Duis sodales maximus tincidunt. Etiam finibus sodales ipsum, vitae auctor massa tincidunt nec. Morbi at condimentum ligula. Nulla elit nisi, mattis et consequat in, fringilla in lectus. Morbi sagittis sapien eros, eget consectetur nisi mollis vitae. Aliquam erat volutpat. Ut bibendum blandit arcu, tincidunt auctor justo elementum sed. Morbi ut suscipit ligula.
                         <br><br>
                         Phasellus sit amet tempor purus, vitae rhoncus odio. In sollicitudin egestas mauris nec mollis. Cras non sollicitudin nulla. Pellentesque luctus, felis in varius dapibus, dui massa mollis urna, eget pretium lorem nisl quis nunc. Etiam convallis quam non nisi luctus, at porttitor nulla sagittis. Morbi aliquam eros non augue lacinia, quis efficitur lorem efficitur. Sed venenatis hendrerit ultricies. Etiam rhoncus elementum molestie. Proin a placerat turpis. Quisque in vehicula justo.
                         <br><br>
                         Fusce ultrices ipsum a dolor lacinia vehicula vitae vitae tellus. Vivamus condimentum ac risus a pellentesque. Fusce ut tortor ullamcorper, facilisis nisi sed, viverra felis. Morbi congue commodo tristique. Maecenas eget cursus sapien, sit amet porttitor tellus. Nulla quis metus dapibus, facilisis est id, dictum tortor. Suspendisse justo magna, elementum et suscipit eget, semper nec risus. Ut nec augue blandit, dignissim ipsum sit amet, blandit diam. Nunc a enim placerat, sagittis erat non, pulvinar lectus. Proin commodo massa quis ligula faucibus rhoncus. Donec eros lectus, placerat ut urna nec, sagittis tincidunt arcu.
                       </div>
-                      <h2 class="main-title">Operator Featured Articles</h2>
+                      <h2 class="main-title">Character Featured Articles</h2>
                       <div
                         class="
                           paragraph
@@ -3039,7 +3294,7 @@
                         </li>
                         <li><a class="selected">Profile</a></li>
                       </ul>
-                      <h2 class="main-title">Operator Profile</h2>
+                      <h2 class="main-title">Character Profile</h2>
                       <div class="profile-cell">
                         <div class="profile-info-table upgrade-cost-table">
                           <table>
